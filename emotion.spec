@@ -2,9 +2,6 @@
 %define	version 0.0.1.005
 %define release %mkrel 2
 
-%define cvsrel 20070516
-#%define release 0.%{cvsrel}.%{mrelease}
-
 %define major 	0
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} %major -d
@@ -53,7 +50,7 @@ Provides: %name-devel = %{version}-%{release}
 %{name} development headers and libraries
 
 %prep
-%setup -q -n %name
+%setup -q
 
 %build
 ./autogen.sh
