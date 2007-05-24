@@ -1,9 +1,9 @@
 %define	name	emotion
 %define	version 0.0.1.005
-%define mrelease %mkrel 2
+%define release %mkrel 2
 
 %define cvsrel 20070516
-%define release 0.%{cvsrel}.%{mrelease}
+#%define release 0.%{cvsrel}.%{mrelease}
 
 %define major 	0
 %define libname %mklibname %{name} %major
