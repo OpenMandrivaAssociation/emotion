@@ -19,6 +19,7 @@ BuildRequires:	evas-devel >= 0.9.9.041, ecore-devel >= 0.9.9.041, eet-devel >= 0
 BuildRequires:	edje-devel >= 0.5.0.041
 BuildRequires:	edje >= 0.5.0.041
 BuildRequires:	libxine-devel
+Buildrequires:  gstreamer0.10-ffmpeg, ffmpeg
 BuildRequires:	libgstreamer0.10-devel
 BuildRequires:	multiarch-utils
 
@@ -93,4 +94,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.la
 %{_includedir}/*.h
 %{_bindir}/%name-config
-%multiarch %multiarch_bindir/%name-config
+%multiarch_bindir/%name-config
