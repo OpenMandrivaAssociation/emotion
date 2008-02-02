@@ -1,10 +1,10 @@
 %define	name	emotion
-%define	version 0.0.1.008
+%define	version 0.1.0.042
 %define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %{name} %major
-%define libnamedev %mklibname %{name} %major -d
+%define libnamedev %mklibname %{name} -d
 
 Summary: 	Enlightenment video and media library
 Name: 		%{name}
@@ -12,16 +12,19 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
-URL: 		http://get-e.org/
+URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel >= 0.9.9.041, ecore-devel >= 0.9.9.041, eet-devel >= 0.9.0.011, embryo-devel >= 0.9.1.041
-BuildRequires:	edje-devel >= 0.5.0.041
-BuildRequires:	edje >= 0.5.0.041
+BuildRequires:	evas-devel
+BuildRequires:	ecore-devel
+BuildRequires:	eet-devel
+BuildRequires:	embryo-devel
+BuildRequires:	edje-devel
+BuildRequires:	edje
 BuildRequires:	libxine-devel
 Buildrequires:  gstreamer0.10-ffmpeg, ffmpeg
+BuildRequires:	gstreamer0.10-plugins-good
 BuildRequires:	libgstreamer0.10-devel
-BuildRequires:	multiarch-utils
 
 %description
 Emotion is a video & media object library designed to interface with Evas and
@@ -54,18 +57,12 @@ Provides: %name-devel = %{version}-%{release}
 %setup -q
 
 %build
-./autogen.sh
 %configure2_5x --enable-gstreamer --enable-xine
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
-# remove unneeded files?
-#rm -f %buildroot/%_libdir/xine/plugins/*/*.{a,la}
-#rm -f %buildroot/%_libdir/%name/*.{a,la}
-cp -v $RPM_BUILD_DIR/%name-%version/%name-config %buildroot/%_bindir/
-%multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
 %postun -n %libname -p /sbin/ldconfig
@@ -93,5 +90,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.a
 %{_libdir}/*.la
 %{_includedir}/*.h
-%{_bindir}/%name-config
-%multiarch_bindir/%name-config
