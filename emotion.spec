@@ -1,6 +1,6 @@
 %define	name	emotion
 %define	version 0.1.0.042
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -25,6 +25,7 @@ BuildRequires:	libxine-devel
 Buildrequires:  gstreamer0.10-ffmpeg, ffmpeg
 BuildRequires:	gstreamer0.10-plugins-good
 BuildRequires:	libgstreamer0.10-devel
+BuildRequires:	libgstreamer0.10-plugins-base-devel
 
 %description
 Emotion is a video & media object library designed to interface with Evas and
