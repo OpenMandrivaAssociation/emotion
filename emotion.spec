@@ -24,7 +24,7 @@ BuildRequires:	edje
 BuildRequires:	libxine-devel
 Buildrequires:  gstreamer0.10-ffmpeg, ffmpeg
 BuildRequires:	gstreamer0.10-plugins-good
-BuildRequires:	libgstreamer0.10-devel
+BuildRequires:	gstreamer0.10-devel
 BuildRequires:	libgstreamer0.10-plugins-base-devel
 
 %description
