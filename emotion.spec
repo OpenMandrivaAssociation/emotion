@@ -22,8 +22,8 @@ BuildRequires:	embryo-devel
 BuildRequires:	edje-devel
 BuildRequires:	edje
 BuildRequires:	libxine-devel
-Buildrequires:  gstreamer-ffmpeg, ffmpeg
-BuildRequires:	gstreamer-plugins-good
+Buildrequires:  gstreamer0.10-ffmpeg, ffmpeg
+BuildRequires:	gstreamer0.10-plugins-good
 BuildRequires:	libgstreamer-devel
 BuildRequires:	libgstreamer-plugins-base-devel
 
