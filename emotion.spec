@@ -15,12 +15,12 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel > 0.9.9.050
-BuildRequires:	ecore-devel > 0.9.9.050
-BuildRequires:	eet-devel > 1.1.0
-BuildRequires:	embryo-devel > 0.9.9.050
-BuildRequires:	edje-devel > 0.5.0.050
-BuildRequires:	edje > 0.5.0.050
+BuildRequires:	evas-devel >= 0.9.9.050
+BuildRequires:	ecore-devel >= 0.9.9.050
+BuildRequires:	eet-devel >= 1.1.0
+BuildRequires:	embryo-devel >= 0.9.9.050
+BuildRequires:	edje-devel >= 0.5.0.050
+BuildRequires:	edje >= 0.5.0.050
 BuildRequires:	libxine-devel
 Buildrequires:  gstreamer0.10-ffmpeg, ffmpeg
 BuildRequires:	gstreamer0.10-plugins-good
