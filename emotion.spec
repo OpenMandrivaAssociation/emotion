@@ -1,6 +1,6 @@
 %define	name	emotion
 %define	version 0.1.0.042
-%define release %mkrel 7
+%define release %mkrel 7.20090807.1
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -15,7 +15,7 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel >= 0.9.9.050
+BuildRequires:	evas-devel >= 0.9.9.062
 BuildRequires:	ecore-devel >= 0.9.9.050
 BuildRequires:	eet-devel >= 1.1.0
 BuildRequires:	embryo-devel >= 0.9.9.050
@@ -23,7 +23,7 @@ BuildRequires:	edje-devel >= 0.5.0.050
 BuildRequires:	edje >= 0.5.0.050
 BuildRequires:	libxine-devel
 Buildrequires:  gstreamer0.10-ffmpeg, ffmpeg
-BuildRequires:	gstreamer0.10-plugins-good
+BuildRequires:	gstreamer0.10-plugins-good gstreamer0.10-cdio
 BuildRequires:	libgstreamer-devel
 BuildRequires:	libgstreamer-plugins-base-devel
 
@@ -58,6 +58,7 @@ Provides: %name-devel = %{version}-%{release}
 %setup -q
 
 %build
+NOCONFIGURE=yes ./autogen.sh
 %configure2_5x --enable-gstreamer --enable-xine
 %make
 
