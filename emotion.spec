@@ -1,6 +1,6 @@
 %define	name	emotion
-%define	version 0.1.0.042
-%define release %mkrel 7.20090807.1
+%define	version 0.2.0
+%define release %mkrel 1.20100711.1
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -59,7 +59,7 @@ Provides: %name-devel = %{version}-%{release}
 
 %build
 NOCONFIGURE=yes ./autogen.sh
-%configure2_5x --enable-gstreamer --enable-xine
+%configure2_5x --enable-gstreamer --enable-xine --disable-vlc
 %make
 
 %install
@@ -79,11 +79,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc AUTHORS COPYING README
-#%{_bindir}/%name
 %{_bindir}/%{name}_*
 %{_datadir}/%name
 %{_libdir}/%name
-#%{_libdir}/xine/plugins/*/*
+%{_libdir}/edje/*
 
 %files -n %libname
 %defattr(-,root,root)
@@ -95,4 +94,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_libdir}/*.la
-%{_includedir}/*.h
+%{_includedir}/emotion-0
