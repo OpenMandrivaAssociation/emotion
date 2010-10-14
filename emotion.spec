@@ -1,6 +1,6 @@
 %define	name	emotion
 %define	version 0.2.0
-%define release %mkrel 1.20100711.1
+%define release %mkrel 1.201010.1
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -14,18 +14,16 @@ License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
+Patch0:		emotion-0.2.0-drop-gstbase.patch
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel >= 0.9.9.062
-BuildRequires:	ecore-devel >= 0.9.9.050
-BuildRequires:	eet-devel >= 1.1.0
-BuildRequires:	embryo-devel >= 0.9.9.050
-BuildRequires:	edje-devel >= 0.5.0.050
-BuildRequires:	edje >= 0.5.0.050
+BuildRequires:	evas-devel >= 1.0.0
+BuildRequires:	ecore-devel >= 1.0.0
+BuildRequires:	edje-devel >= 1.0.0
+BuildRequires:	edje >= 1.0.0
 BuildRequires:	libxine-devel
-Buildrequires:  gstreamer0.10-ffmpeg, ffmpeg
-BuildRequires:	gstreamer0.10-plugins-good gstreamer0.10-cdio
+BuildRequires:	gstreamer0.10-tools
+BuildRequires:	gstreamer0.10-ffmpeg gstreamer0.10-cdio
 BuildRequires:	libgstreamer-devel
-BuildRequires:	libgstreamer-plugins-base-devel
 
 %description
 Emotion is a video & media object library designed to interface with Evas and
@@ -39,7 +37,7 @@ This package is part of the Enlightenment DR17 desktop shell.
 %package -n %libname
 Summary: Libraries for the %{name} package
 Group: System/Libraries
-Requires: %{name}
+Requires: %{name} >= %{version}-%{release}
 
 %description -n %libname
 Libraries for %{name}
@@ -56,6 +54,7 @@ Provides: %name-devel = %{version}-%{release}
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 NOCONFIGURE=yes ./autogen.sh
