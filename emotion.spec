@@ -1,6 +1,6 @@
 %define	name	emotion
 %define	version 0.2.0
-%define release %mkrel 1.201010.1
+%define release %mkrel 1.20101010.1
 
 %define major 	0
 %define libname %mklibname %{name} %major
