@@ -33,7 +33,7 @@ BuildRequires:	pkgconfig(ecore) >= 1.0.0
 BuildRequires:	pkgconfig(edje) >= 1.0.0
 BuildRequires:	pkgconfig(embryo) >= 1.0.0
 BuildRequires:	pkgconfig(eet) >= 1.4.0
-BuildRequires:	pkgconfig(evas >= 1.0.0
+BuildRequires:	pkgconfig(evas) >= 1.0.0
 BuildRequires:	pkgconfig(gstreamer-0.10)
 #BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
 BuildRequires:	pkgconfig(libxine)
