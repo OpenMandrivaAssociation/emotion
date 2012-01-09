@@ -28,16 +28,19 @@ URL:		http://www.enlightenment.org/
 Source0:	%{name}-%{version}.tar.xz
 #Patch0:		emotion-0.2.0-drop-gstbase.patch
 
+BuildRequires:	evas >= 1.0.0
 BuildRequires:	edje >= 1.0.0
 BuildRequires:	libgstbasevideo-devel
 BuildRequires:	pkgconfig(ecore) >= 1.0.0
 BuildRequires:	pkgconfig(edje) >= 1.0.0
+BuildRequires:	pkgconfig(eio)
 BuildRequires:	pkgconfig(embryo) >= 1.0.0
 BuildRequires:	pkgconfig(eet) >= 1.4.0
 BuildRequires:	pkgconfig(evas) >= 1.0.0
 BuildRequires:	pkgconfig(gstreamer-0.10)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
-BuildRequires:	pkgconfig(libxine)
+# fails to build with newer xine atm
+BuildRequires:	pkgconfig(libxine) < 1.1.90
 BuildRequires:	gstreamer0.10-ffmpeg, ffmpeg
 BuildRequires:	gstreamer0.10-plugins-good gstreamer0.10-cdio
 
