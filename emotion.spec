@@ -26,16 +26,17 @@ License:	BSD
 Group:		Graphical desktop/Enlightenment
 URL:		http://www.enlightenment.org/
 Source0:	%{name}-%{version}.tar.xz
-Patch0:		emotion-0.2.0-drop-gstbase.patch
+#Patch0:		emotion-0.2.0-drop-gstbase.patch
 
 BuildRequires:	edje >= 1.0.0
+BuildRequires:	libgstbasevideo-devel
 BuildRequires:	pkgconfig(ecore) >= 1.0.0
 BuildRequires:	pkgconfig(edje) >= 1.0.0
 BuildRequires:	pkgconfig(embryo) >= 1.0.0
 BuildRequires:	pkgconfig(eet) >= 1.4.0
 BuildRequires:	pkgconfig(evas) >= 1.0.0
 BuildRequires:	pkgconfig(gstreamer-0.10)
-#BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
+BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
 BuildRequires:	pkgconfig(libxine)
 BuildRequires:	gstreamer0.10-ffmpeg, ffmpeg
 BuildRequires:	gstreamer0.10-plugins-good gstreamer0.10-cdio
@@ -68,7 +69,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 
 %prep
 %setup -qn %{name}
-%patch0 -p0
+#patch0 -p0
 
 %build
 NOCONFIGURE=yes ./autogen.sh
