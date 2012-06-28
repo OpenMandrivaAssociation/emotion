@@ -11,36 +11,32 @@
 #cd ..; \
 #tar -Jcf emotion-$PKG_VERSION.tar.xz emotion/ --exclude .svn --exclude .*ignore
 
-%define	svndate	20120103
-%define	svnrev	66791
-
-%define	major 	0
+%define	major 	1
 %define	libname %mklibname %{name} %{major}
 %define	develname %mklibname %{name} -d
 
 Name:		emotion
-Version:	0.2.0.%{svnrev}
-Release:	0.%{svndate}.1
+Version:	1.0.1
+Release:	1
 Summary:	Enlightenment video and media library
 License:	BSD
 Group:		Graphical desktop/Enlightenment
 URL:		http://www.enlightenment.org/
-Source0:	%{name}-%{version}.tar.xz
-#Patch0:		emotion-0.2.0-drop-gstbase.patch
+Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.gz
 
-BuildRequires:	evas >= 1.0.0
-BuildRequires:	edje >= 1.0.0
+BuildRequires:	evas >= 1.2.1
+BuildRequires:	edje >= 1.2.1
 BuildRequires:	libgstbasevideo-devel
-BuildRequires:	pkgconfig(ecore) >= 1.0.0
-BuildRequires:	pkgconfig(edje) >= 1.0.0
+BuildRequires:	pkgconfig(ecore) >= 1.2.1
+BuildRequires:	pkgconfig(edje) >= 1.2.1
 BuildRequires:	pkgconfig(eio)
-BuildRequires:	pkgconfig(embryo) >= 1.0.0
-BuildRequires:	pkgconfig(eet) >= 1.4.0
-BuildRequires:	pkgconfig(evas) >= 1.0.0
+BuildRequires:	pkgconfig(embryo) >= 1.2.0
+BuildRequires:	pkgconfig(eet) >= 1.6.1
+BuildRequires:	pkgconfig(evas) >= 1.2.1
 BuildRequires:	pkgconfig(gstreamer-0.10)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
 # fails to build with newer xine atm
-BuildRequires:	pkgconfig(libxine) < 1.1.90
+#BuildRequires:	pkgconfig(libxine) < 1.1.90
 BuildRequires:	gstreamer0.10-ffmpeg, ffmpeg
 BuildRequires:	gstreamer0.10-plugins-good gstreamer0.10-cdio
 
@@ -71,7 +67,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 %{name} development headers and libraries
 
 %prep
-%setup -qn %{name}
+%setup -q
 #patch0 -p0
 
 %build
