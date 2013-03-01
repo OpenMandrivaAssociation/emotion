@@ -9,7 +9,7 @@ Release:	1
 License:	BSD
 Group:		Graphical desktop/Enlightenment
 URL:		http://www.enlightenment.org/
-Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
+Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.gz
 
 BuildRequires:	doxygen
 BuildRequires:	evas >= 1.7.1
