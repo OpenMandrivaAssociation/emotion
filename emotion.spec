@@ -1,3 +1,4 @@
+%define	gstapi 	0.10
 %define	major 	1
 %define	libname %mklibname %{name} %{major}
 %define	devname %mklibname %{name} -d
@@ -8,13 +9,13 @@ Version:	1.7.5
 Release:	1
 License:	BSD
 Group:		Graphical desktop/Enlightenment
-URL:		http://www.enlightenment.org/
-Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.gz
+Url:		http://www.enlightenment.org/
+Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
 
 BuildRequires:	doxygen
 BuildRequires:	evas >= 1.7.1
 BuildRequires:	edje >= 1.7.1
-BuildRequires:	gstreamer0.10-tools
+BuildRequires:	gstreamer%{gstapi}-tools
 BuildRequires:	pkgconfig(ecore) >= 1.7.1
 BuildRequires:	pkgconfig(edje) >= 1.7.1
 BuildRequires:	pkgconfig(eio)
@@ -23,9 +24,9 @@ BuildRequires:	pkgconfig(eet) >= 1.7.1
 BuildRequires:	pkgconfig(eeze) >= 1.7.1
 BuildRequires:	pkgconfig(evas) >= 1.7.1
 BuildRequires:	pkgconfig(edje) >= 1.7.1
-BuildRequires:	pkgconfig(gstreamer-0.10)
-BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
-BuildRequires:	pkgconfig(gstreamer-video-0.10)
+BuildRequires:	pkgconfig(gstreamer-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-plugins-base-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-video-%{gstapi})
 BuildRequires:	pkgconfig(libxine)
 BuildRequires:	pkgconfig(lua)
 
@@ -59,7 +60,6 @@ Provides:	%{name}-devel = %{version}-%{release}
 %setup -q
 
 %build
-#autoreconf -fi
 %configure2_5x \
 	--enable-gstreamer \
 	--enable-xine \
