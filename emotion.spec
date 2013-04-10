@@ -1,16 +1,16 @@
-%define	gstapi 	0.10
-%define	major 	1
+%define	gstapi	0.10
+%define	major	1
 %define	libname %mklibname %{name} %{major}
 %define	devname %mklibname %{name} -d
 
 Summary:	Enlightenment video and media library
 Name:		emotion
-Version:	1.7.5
+Version:	1.7.6
 Release:	1
 License:	BSD
 Group:		Graphical desktop/Enlightenment
 Url:		http://www.enlightenment.org/
-Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
+Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.gz
 
 BuildRequires:	doxygen
 BuildRequires:	evas >= 1.7.1
