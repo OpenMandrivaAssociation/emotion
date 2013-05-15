@@ -5,12 +5,12 @@
 
 Summary:	Enlightenment video and media library
 Name:		emotion
-Version:	1.7.6
+Version:	1.7.7
 Release:	1
 License:	BSD
 Group:		Graphical desktop/Enlightenment
 Url:		http://www.enlightenment.org/
-Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.gz
+Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
 
 BuildRequires:	doxygen
 BuildRequires:	evas >= 1.7.1
