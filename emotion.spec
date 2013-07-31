@@ -5,7 +5,7 @@
 
 Summary:	Enlightenment video and media library
 Name:		emotion
-Version:	1.7.7
+Version:	1.7.8
 Release:	1
 License:	BSD
 Group:		Graphical desktop/Enlightenment
@@ -50,8 +50,8 @@ Libraries for %{name}.
 %package -n %{devname}
 Summary:	Headers and development libraries from %{name}
 Group:		Development/Other
-Requires:	%{libname} = %{version}-%{release}
-Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devname}
 %{name} development headers and libraries.
@@ -82,6 +82,6 @@ Provides:	%{name}-devel = %{version}-%{release}
 
 %files -n %{devname}
 %{_libdir}/pkgconfig/*
-%{_libdir}/*.so
+%{_libdir}/lib%{name}.so
 %{_includedir}/%{name}*
 
