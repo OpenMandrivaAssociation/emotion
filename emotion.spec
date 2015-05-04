@@ -1,3 +1,4 @@
+#This package is OBSOLETE library is now part of efl
 %define	gstapi	0.10
 %define	major	1
 %define	libname %mklibname %{name} %{major}
