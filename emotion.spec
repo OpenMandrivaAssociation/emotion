@@ -13,6 +13,11 @@ Group:		Graphical desktop/Enlightenment
 Url:		https://www.enlightenment.org/
 Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	doxygen
 BuildRequires:	evas >= 1.7.1
 BuildRequires:	edje >= 1.7.1
